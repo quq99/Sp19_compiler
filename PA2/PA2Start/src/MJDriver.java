@@ -13,7 +13,10 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 
 import mjparser.*;
-//import ast_visitors.*;
+import ast_visitors.*;
+import ast.node.*;
+import ast.visitor.*;
+import ast.node.Program;
 
 public class MJDriver {
 
@@ -46,8 +49,16 @@ public class MJDriver {
           System.out.println("Driver finds input filename: " + parser.programName);
 
           // and parse
-          parser.parse();
-          /*
+          //parser.parse();
+          Program ast_root = (Program) parser.parse().value;
+          // Test if the name of main class matches the name of file 
+          lastInPath = parser.programName.lastIndexOf('.');
+          String baseFileName = parser.programName.substring(0, lastInPath);
+          if (!ast_root.getMainClass().getName().equals(baseFileName)) {
+              System.out.println("The name of main class doesn't match the name of the source file" + "\n\t[name of main class]: "
+                + ast_root.getMainClass().getName() + "\n\t[name of source file]: " + baseFileName);
+              System.exit(1);
+          }
                 
           // print ast to file
           java.io.PrintStream astout =
@@ -55,6 +66,7 @@ public class MJDriver {
                 new java.io.FileOutputStream(filename + ".ast.dot"));
           ast_root.accept(new DotVisitor(new PrintWriter(astout)));
           System.out.println("Printing AST to " + filename + ".ast.dot");
+          /*
           // create the symbol table
           BuildSymTable stVisitor = new BuildSymTable();
           ast_root.accept(stVisitor);
