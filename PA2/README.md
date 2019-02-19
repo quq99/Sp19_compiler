@@ -8,7 +8,7 @@ I implement the grammers in collab resource link, which is PA6 part.
 
 I use the all test file in `PA2Examples` to test the grammer implementation. 
 
-My compiler is named `MJ.jar` and the reference compiler is `MJRefer.jar`
+My compiler is named `MJ.jar` and the reference compiler is `MJRefer.jar` in `PA2Start` directory.
 
 And to make your job easiler, I write a script `test.sh` in `PA2Start` to run the test. Just run `sh test.sh`. It will do the make and diff automatically.
 

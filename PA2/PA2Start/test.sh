@@ -1,3 +1,11 @@
+make clean
+make
+echo "===================================="
+echo "make complete"
+echo "===================================="
+
+echo "test start, into PA2Example directory"
+echo "===================================="
 cd ../PA2Examples
 rm -rf Myoutput/
 rm -rf Referenceoutput/
@@ -15,7 +23,10 @@ do
 	rm ${filename}".ST.dot"
 
 done
-
+echo "========================================="
+echo "diff all the file in PA2Examples/Myoutput"
+echo "       and in PA2Examples/Referenceoutput"
+echo "========================================="
 for filename in `ls Myoutput/`
 do
     echo "diff ${filename}"
