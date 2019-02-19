@@ -13,6 +13,7 @@ My compiler is named `MJ.jar` and the reference compiler is `MJRefer.jar` in `PA
 And to make your job easiler, I write a script `test.sh` in `PA2Start` to run the test. Just run `sh test.sh`. It will do the make and diff automatically.
 
 The file dir looks like this:
+`
 ├── PA2Examples
 │   ├── Byte.java
 │   ├── Byte.java.ast.pdf
@@ -55,4 +56,5 @@ The file dir looks like this:
 │   ├── src
 │   └── test.sh
 └── README.md
+`
 
