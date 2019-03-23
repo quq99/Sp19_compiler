@@ -127,16 +127,111 @@ public class CheckTypes extends DepthFirstVisitor
     } 
     else {
       throw new SemanticException(
-        "ID [" + node.getLexeme() + "] is not defined under scope " + mCurrentST.getCurrentScope().getName(), 
+        "ID [" + node.getLexeme() + "] is not in scope " + mCurrentST.getCurrentScope().getName(), 
         node.getLine(), node.getPos());
     }
   }
 
   /**
    * =============================
-   * ==========expression=========
+   * ==========statement==========
    * =============================
    */
+  @Override
+  public void outMeggyDelay(MeggyDelay node) {
+    if (isIntOrByte(getType(node.getExp()))) {
+      this.mCurrentST.setExpType(node, Type.VOID);
+    } else {
+      throw new SemanticException(
+        "Invalid parameter types for Meggy.delay, expect: INT", 
+        node.getLine(), node.getPos());
+    }
+  }
+
+  @Override
+  public void outMeggySetPixel(MeggySetPixel node) {
+    Type xExpType = getType(node.getXExp());
+    Type yExpType = getType(node.getYExp());
+    Type colorType = getType(node.getColor());
+    if (isIntOrByte(xExpType) && isIntOrByte(yExpType) && isColor(colorType)) {
+          this.mCurrentST.setExpType(node, Type.VOID);
+    }
+    else {
+          throw new SemanticException(
+            "Invalid parameter types for Meggy.setPixel, expect: (BYTE, BYTE, COLOR)", 
+            node.getLine(), node.getPos());
+        }
+  }
+  
+  
+
+  @Override
+  public void outMeggyToneStart(MeggyToneStart node) {
+    if (!isTone(getType(node.getToneExp()))) {
+      throw new SemanticException(
+        "Invalid parameter types for Meggy.toneStart, expect: TONE", 
+        node.getToneExp().getLine(), node.getToneExp().getPos());
+    }
+    if (!isIntOrByte(getType(node.getDurationExp()))) {
+      throw new SemanticException(
+        "Invalid parameter types for Meggy.toneStart, expect: INT", 
+        node.getDurationExp().getLine(),
+        node.getDurationExp().getPos());
+    }
+    this.mCurrentST.setExpType(node, Type.VOID);
+  }
+  
+  @Override
+  public void visitIfStatement(IfStatement node) {
+    inIfStatement(node);
+    if (node.getExp() != null) {
+      node.getExp().accept(this);
+    }
+    if (!isBoolean(getType(node.getExp()))) {
+      throw new SemanticException(
+        "Invalid condition type for if statement, expect type: BOOL, but output: " + getType(node.getExp()).toString(), 
+        node.getLine(), node.getPos());
+    }
+    if (node.getThenStatement() != null) {
+      node.getThenStatement().accept(this);
+    }
+    if (node.getElseStatement() != null) {
+      node.getElseStatement().accept(this);
+    }
+  }
+  
+  @Override
+  public void visitWhileStatement(WhileStatement node) {
+    if (node.getExp() != null) {
+      node.getExp().accept(this);
+    }
+    if (!isBoolean(getType(node.getExp()))) {
+      throw new SemanticException(
+        "Invalid condition type for while statement, expect type: BOOL, but output: " + getType(node.getExp()).toString(), 
+        node.getLine(), node.getPos());
+    }
+    if (node.getStatement() != null) {
+      node.getStatement().accept(this);
+    }
+  }
+
+  @Override
+  public void outAssignStatement(AssignStatement node) {
+    VarSTE var = mCurrentST.lookupVar(node.getId());
+    if (var != null) {
+      if (var.getType() != getType(node.getExp())) {
+        throw new SemanticException(
+          "Invalid type in assignment to var [" + node.getId() + "], expect: " + var.getType().toString() + ", actual: " + getType(node.getExp()).toString(), 
+          node.getLine(), node.getPos());
+      }
+    } 
+    else {
+      throw new SemanticException(
+        "Var [" + node.getId() + "] is not in scope " + mCurrentST.getCurrentScope().getName(), 
+        node.getLine(), node.getPos());
+    }
+  }
+
 
    public void outAndExp(AndExp node)
    {
