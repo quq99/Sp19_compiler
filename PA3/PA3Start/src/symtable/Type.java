@@ -23,7 +23,7 @@ public class Type
   }
 
   public Type(String name) {
-    typeName = name;
+    typeName = "class_"+name;
     typeMap.put(name, this);
   }
 
@@ -33,7 +33,7 @@ public class Type
     }
     else {
       Type newtype = new Type(name);
-      typeMap.put(name, newtype);
+      //typeMap.put(name, newtype);
       return newtype;
     }
   } 
@@ -75,7 +75,7 @@ public class Type
     }
 
     if (this == VOID) {
-      return "VOID";
+      return "class_null";
     }
 
     if (typeName != null) {

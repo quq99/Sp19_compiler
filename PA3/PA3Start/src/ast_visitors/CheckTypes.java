@@ -121,7 +121,7 @@ public class CheckTypes extends DepthFirstVisitor
 
   @Override
   public void outIdLiteral(IdLiteral node) {
-    VarSTE varSTE = mCurrentST.lookupVar(node.getLexeme());
+    VarSTE varSTE = (VarSTE)mCurrentST.lookupOther(node.getLexeme(), "var");
     if (varSTE != null) {
       this.mCurrentST.setExpType(node, varSTE.getType());
     } 
@@ -217,7 +217,7 @@ public class CheckTypes extends DepthFirstVisitor
 
   @Override
   public void outAssignStatement(AssignStatement node) {
-    VarSTE var = mCurrentST.lookupVar(node.getId());
+    VarSTE var = (VarSTE)mCurrentST.lookupOther(node.getId(), "var");
     if (var != null) {
       if (var.getType() != getType(node.getExp())) {
         throw new SemanticException(
@@ -252,7 +252,7 @@ public class CheckTypes extends DepthFirstVisitor
   public void outCallExp(CallExp node) {
     STE ste = mCurrentST.lookup(getType(node.getExp()).toString());
     mCurrentST.pushScope(ste.getScope());
-    MethodSTE mSTE = mCurrentST.lookupMethod(node.getId());
+    MethodSTE mSTE = (MethodSTE)mCurrentST.lookupOther(node.getId(), "method");
     if (mSTE != null) {
       checkMethodParameters(node, mSTE);
       setType(node, mSTE.getSignature().getReturnType());
@@ -276,7 +276,7 @@ public class CheckTypes extends DepthFirstVisitor
       ste = mCurrentST.lookup(getType(node.getExp()).toString());
       mCurrentST.pushScope(ste.getScope());
     }
-    MethodSTE mSTE = mCurrentST.lookupMethod(node.getId());
+    MethodSTE mSTE = (MethodSTE)mCurrentST.lookupOther(node.getId(), "method");
     if (mSTE != null) {
       checkMethodParameters(node, mSTE);
       setType(node, mSTE.getSignature().getReturnType());
@@ -332,7 +332,7 @@ public class CheckTypes extends DepthFirstVisitor
   @Override
   public void visitMethodDecl(MethodDecl node) {
     assert (mCurrentST.getCurrentScope().getScopeType() == Scope.classScope);
-    MethodSTE methodSTE = mCurrentST.lookupMethod(node.getName());
+    MethodSTE methodSTE = (MethodSTE)mCurrentST.lookupOther(node.getName(), "method");
     if (methodSTE != null) {
       mCurrentST.pushScope(methodSTE.getScope());
     } 
@@ -369,7 +369,7 @@ public class CheckTypes extends DepthFirstVisitor
     if (returnType != declaredType) {
       throw new SemanticException(
         "Invalid return type for Method[" + node.getName() + "]," + 
-        " expect: " + declaredType.toString() + ", actual: " + retType.toString(), 
+        " expect: " + declaredType.toString() + ", actual: " + returnType.toString(), 
         node.getLine(), node.getPos());
     }
     mCurrentST.popScope();
@@ -378,7 +378,7 @@ public class CheckTypes extends DepthFirstVisitor
   @Override
   public void inTopClassDecl(TopClassDecl node) {
     assert (mCurrentST.getCurrentScope() == mCurrentST.getGlobalScope());
-    ClassSTE classSTE = mCurrentST.lookupClass(node.getName());
+    ClassSTE classSTE = (ClassSTE)mCurrentST.lookupOther(node.getName(), "class");
     if (classSTE != null) {
       mCurrentST.pushScope(classSTE.getScope());
     }
@@ -398,7 +398,7 @@ public class CheckTypes extends DepthFirstVisitor
   @Override
   public void inMainClass(MainClass node) {
     assert (mCurrentST.getCurrentScope() == mCurrentST.getGlobalScope());
-    ClassSTE mainSTE = mCurrentST.lookupClass(node.getName());
+    ClassSTE mainSTE = (ClassSTE)mCurrentST.lookupOther(node.getName(), "class");
     if (mainSTE != null) {
       mCurrentST.pushScope(mainSTE.getScope());
     }
@@ -556,7 +556,7 @@ public class CheckTypes extends DepthFirstVisitor
 
   @Override
   public void outNewExp(NewExp node) {
-    ClassSTE classSTE = mCurrentST.lookupClass(node.getId());
+    ClassSTE classSTE = (ClassSTE)mCurrentST.lookupOther(node.getId(), "class");
     if (classSTE != null) {
       this.mCurrentST.setExpType(node, Type.getOrCreateType(classSTE.getName()));
     } 

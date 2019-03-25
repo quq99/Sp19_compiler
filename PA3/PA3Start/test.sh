@@ -6,7 +6,7 @@ echo "===================================="
 
 echo "test start, into PA2Example directory"
 echo "===================================="
-cd ../PA2Examples
+cd ../PA3Examples
 rm -rf Myoutput/
 rm -rf Referenceoutput/
 mkdir Myoutput
