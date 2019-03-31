@@ -4,31 +4,45 @@ echo "===================================="
 echo "make complete"
 echo "===================================="
 
-echo "test start, into PA2Example directory"
+echo " "
+echo "test start, into ./TestPA3 directory"
+echo " "
 echo "===================================="
-cd ../PA3Examples
-rm -rf Myoutput/
-rm -rf Referenceoutput/
-mkdir Myoutput
-mkdir Referenceoutput
+cd TestPA3
+
+echo "into WorkingTest directory"
+echo "===================================="
+cd WorkingTest
 for filename in `ls *.java`
 do
-	java -jar ../PA2Start/MJ.jar $filename
-	mv ${filename}".ast.dot" Myoutput/${filename}".ast.dot"
-
-	java -jar ../PA2Start/MJRefer.jar $filename
-	mv ${filename}".ast.dot" Referenceoutput/${filename}".ast.dot"
-
-	rm ${filename}".s"
-	rm ${filename}".ST.dot"
+	#rm ${filename}".s"
+	rm ${filename}".ST.txt"
+	rm ${filename}".ast.dot"
+	java -jar ../../MJ.jar $filename
 
 done
+
+echo " "
 echo "========================================="
-echo "diff all the file in PA2Examples/Myoutput"
-echo "       and in PA2Examples/Referenceoutput"
+echo "diff all the .ST.txt file in TestPA3/WorkingTest"
+echo "       and in TestPA3/WorkingTest/expectOutput"
 echo "========================================="
-for filename in `ls Myoutput/`
+for filename in `ls expectOutput/`
 do
-    echo "diff ${filename}"
-	diff Myoutput/${filename} Referenceoutput/${filename}
+    echo "diff ${filename} with expected file"
+	diff expectOutput/${filename} ./${filename}
+    echo "if no other information, ${filename} OK"
 done
+
+echo " "
+echo "========================================="
+echo "testing error cases in TestPA3/ErrorTest"
+echo "========================================="
+cd ../ErrorTest
+for filename in `ls *.java`
+do
+    echo "++++++++++++++++++++"
+    echo "test file ${filename}"
+    java -jar ../../MJ.jar ${filename}
+done
+

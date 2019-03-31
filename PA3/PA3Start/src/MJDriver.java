@@ -73,6 +73,9 @@ public class MJDriver {
           ast_root.accept(stVisitor);
           symtable.SymTable globalST = stVisitor.getSymTable();
 
+          // perform type checking
+          ast_root.accept(new CheckTypes(globalST));
+
           // print Symbol table to file
           java.io.PrintStream STout = new java.io.PrintStream(new java.io.FileOutputStream(filename + ".ST.txt"));
           // ast_root.accept(new DotVisitorWithMap(new PrintWriter(STout), globalST));
@@ -82,8 +85,7 @@ public class MJDriver {
           System.out.println("Printing symbol table to " + filename + ".ST.txt");
           // globalST.outputDot(STout);
 
-          // perform type checking
-          ast_root.accept(new CheckTypes(globalST));
+          
               /*
           // Determine whether to do register allocation or not.
           if ( args.length == 2 && args[0].equals("--regalloc") ) {

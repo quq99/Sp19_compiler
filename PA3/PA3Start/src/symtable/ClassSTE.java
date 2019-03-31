@@ -9,12 +9,7 @@ public class ClassSTE extends STE {
         super(name, scope);
         mMain = main;
         mSuperClass = superClass;
-        mSize = 0;
-        for (Object ste : scope.getDict().values()) {
-            if (ste instanceof VarSTE) {
-                mSize += ((VarSTE)ste).getType().getAVRTypeSize();
-            }
-        }
+        
     }
     public boolean getMain() {
         return mMain;

@@ -19,7 +19,7 @@ public class BuildSymTable extends DepthFirstVisitor {
   }
 
   private void debugInfo(String msg) {
-      System.err.println("[Debug Info]: " + msg);
+      System.err.println("[Build Symbol Table, Debug Info]: " + msg);
   }
 
   private Type getType(Node node) {
@@ -124,6 +124,7 @@ public class BuildSymTable extends DepthFirstVisitor {
   @Override
   public void inMainClass(MainClass node) {
     assert (ST.getCurrentScope() == ST.getGlobalScope());
+
     ClassSTE classSTE = new ClassSTE(node.getName(), 
                                               true,
                                               null, 
@@ -134,7 +135,7 @@ public class BuildSymTable extends DepthFirstVisitor {
         node.getLine(),
         node.getPos());
     }
-    String info = "Insert class [" + node.getName() + "] under scope " + ST.getCurrentScope().getName();
+    String info = "Insert main class [" + node.getName() + "] under scope " + ST.getCurrentScope().getName();
     debugInfo(info);
     ST.pushScope(classSTE.getScope());
   }

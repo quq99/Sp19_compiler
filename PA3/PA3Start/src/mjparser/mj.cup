@@ -435,9 +435,16 @@ exp ::=
     {:
         RESULT = new ThisLiteral(t.line, t.pos, t.lexeme, t.value);
     :}
-    | NEW:n type:m LBRACKET exp:e RBRACKET
+    | NEW:n INT:m LBRACKET exp:size RBRACKET
     {:
-        RESULT = new NewArrayExp(n.line, n.pos, m, e);
+        IntArrayType item=new IntArrayType(n.line, n.pos);
+        RESULT = new NewArrayExp(n.line,n.pos,item,size);
+    :}
+
+    | NEW:n MEGGYCOLOR:m LBRACKET exp:size RBRACKET
+    {:
+        ColorArrayType item=new ColorArrayType(n.line, n.pos);
+        RESULT=new NewArrayExp(n.line, n.pos, item, size);          
     :}
     | NEW:n identifier:id LPAREN RPAREN
     {:

@@ -8,12 +8,7 @@ public class MethodSTE extends STE {
         super(name, scope);
         mSignature = signature;
         mSize = 0;
-        // for (Object ste : scope.getDict().values()) {
-        //     mSize = 0;
-        //     if (ste instanceof VarSTE) {
-        //         mSize += ((VarSTE)ste).getType().getAVRTypeSize();
-        //     }
-        // }
+        
     }
 
     public MethodSTE(String name, Scope scope) {

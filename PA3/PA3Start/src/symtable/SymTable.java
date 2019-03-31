@@ -69,25 +69,54 @@ public class SymTable {
         return null;
     }
 
-    public STE lookupOther(String sym, String classScope) {
+    /*public STE lookupOther(String sym, String classScope) {
         Stack<Scope> copy = (Stack<Scope>)mScopeStack.clone();
         STE result = null;
         while (!copy.empty()) {
             Scope scope = copy.pop();
             result = scope.lookup(sym);
-            
-            if (result != null && ("var").equals(classScope) && ("VarSTE").equals(result.getClass().getName())) { 
-                return result;
+            //if (sym.equals("PA4noDef")) 
+            //System.out.println(result.getClass().getName());
+            //STE STEtest = scope.lookup()
+            if (result != null) {
+                if ( ("var").equals(classScope) && result instanceof VarSTE) { 
+                    System.out.println(result.getClass().getName());
+                    return result;
+                }
+                else if ( ("method").equals(classScope) && result instanceof MethodSTE) { 
+                    System.out.println(result.getClass().getName());
+                    return result;
+                }
+                else if ( ("class").equals(classScope) && result instanceof ClassSTE) { 
+                    
+                    return result;
+                }
             }
-            else if (result != null && ("method").equals(classScope) && ("MethodSTE").equals(result.getClass().getName())) { 
-                return result;
-            }
-            else if (result != null && ("class").equals(classScope) && ("ClassSTE").equals(result.getClass().getName())) { 
-                return result;
+        }
+        return null;
+    }*/
+
+    public STE lookupOther(String sym, String typesOfSTE) {
+        Stack<Scope> copy = (Stack<Scope>)mScopeStack.clone();
+        STE result = null;
+        while (!copy.empty()) {
+            Scope scope = copy.pop();
+            result = scope.lookup(sym);
+            if (result != null ) {
+                if (typesOfSTE.equals("var") && result instanceof VarSTE) {
+                    return result;
+                }
+                else if (typesOfSTE.equals("method") && result instanceof MethodSTE) {
+                    return result;
+                }
+                else if (typesOfSTE.equals("class") && result instanceof ClassSTE) {
+                    return result;
+                }
             }
         }
         return null;
     }
+    
 
 
     /**
