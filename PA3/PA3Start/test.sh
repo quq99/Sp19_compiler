@@ -45,4 +45,3 @@ do
     echo "test file ${filename}"
     java -jar ../../MJ.jar ${filename}
 done
-

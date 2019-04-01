@@ -20,8 +20,8 @@ public class SymTable {
     private Scope mGlobalScope;
     private Stack<Scope> mScopeStack;
     public static final int maxParamNum = 12; // 12 formal parameters at most
-    public static final String classVarBase = "Z";
-    public static final String methodVarBase = "Y";
+    public static final String classVarBase = "Z"; // for future use
+    public static final String methodVarBase = "Y"; // for future use
 
     public SymTable() {
         mGlobalScope = new Scope("global", Scope.globalScope); // Global Scope don't need name, maybe?

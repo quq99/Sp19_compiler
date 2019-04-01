@@ -1,0 +1,109 @@
+digraph ASTGraph {
+0 [ label="Program" ];
+1 [ label="MainClass" ];
+0 -> 1
+2 [ label="BlockStatement" ];
+1 -> 2
+3 [ label="CallStatement" ];
+2 -> 3
+4 [ label="NewExp" ];
+3 -> 4
+5 [ label="ByteCast" ];
+3 -> 5
+6 [ label="IntLiteral\n1" ];
+5 -> 6
+7 [ label="IntLiteral\n2" ];
+3 -> 7
+8 [ label="IntLiteral\n3" ];
+3 -> 8
+9 [ label="IntLiteral\n4" ];
+3 -> 9
+10 [ label="IntLiteral\n5" ];
+3 -> 10
+11 [ label="IntLiteral\n6" ];
+3 -> 11
+12 [ label="IntLiteral\n7" ];
+3 -> 12
+13 [ label="IntLiteral\n8" ];
+3 -> 13
+14 [ label="IntLiteral\n9" ];
+3 -> 14
+15 [ label="IntLiteral\n10" ];
+3 -> 15
+16 [ label="IntLiteral\n11" ];
+3 -> 16
+17 [ label="IntLiteral\n12" ];
+3 -> 17
+18 [ label="IntLiteral\n13" ];
+3 -> 18
+19 [ label="IntLiteral\n14" ];
+3 -> 19
+20 [ label="IntLiteral\n15" ];
+3 -> 20
+21 [ label="IntLiteral\n16" ];
+3 -> 21
+22 [ label="TopClassDecl" ];
+0 -> 22
+23 [ label="MethodDecl" ];
+22 -> 23
+24 [ label="IntType" ];
+23 -> 24
+25 [ label="Formal" ];
+23 -> 25
+26 [ label="ByteType" ];
+25 -> 26
+27 [ label="Formal" ];
+23 -> 27
+28 [ label="IntType" ];
+27 -> 28
+29 [ label="Formal" ];
+23 -> 29
+30 [ label="IntType" ];
+29 -> 30
+31 [ label="Formal" ];
+23 -> 31
+32 [ label="IntType" ];
+31 -> 32
+33 [ label="Formal" ];
+23 -> 33
+34 [ label="IntType" ];
+33 -> 34
+35 [ label="Formal" ];
+23 -> 35
+36 [ label="IntType" ];
+35 -> 36
+37 [ label="Formal" ];
+23 -> 37
+38 [ label="IntType" ];
+37 -> 38
+39 [ label="Formal" ];
+23 -> 39
+40 [ label="IntType" ];
+39 -> 40
+41 [ label="Formal" ];
+23 -> 41
+42 [ label="IntType" ];
+41 -> 42
+43 [ label="Formal" ];
+23 -> 43
+44 [ label="IntType" ];
+43 -> 44
+45 [ label="Formal" ];
+23 -> 45
+46 [ label="IntType" ];
+45 -> 46
+47 [ label="Formal" ];
+23 -> 47
+48 [ label="IntType" ];
+47 -> 48
+49 [ label="Formal" ];
+23 -> 49
+50 [ label="IntType" ];
+49 -> 50
+51 [ label="Formal" ];
+23 -> 51
+52 [ label="IntType" ];
+51 -> 52
+53 [ label="IntLiteral\n0" ];
+23 -> 53
+}

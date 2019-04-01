@@ -1,67 +1,77 @@
 # PA3
-PA3
 
-Pseudo code for printing symbol table
+Dear Prof. Soffa and TAs,
 
-public void printSymTable(Scope sc) {
-		boolean flag = false;
-		HashMap<String,SymbolTableEntryClassName> tempHashMap = new HashMap(sc.getHashMap());
-		List<String> keyList = new ArrayList(tempHashMap.keySet());
-		Collections.sort(keyList);
-		
-		for (String scopeName : keyList) {
-			SymbolTableEntryClassName s = tempHashMap.get(scopeName);
-			if(<<check if s is a class here>>) { 
-				if(!flag) {
-					out.print("Classes in global scope:");
-					flag = true;
-				}
-				out.print(" "+<<CLASS NAME>>);
-			}
-		}
-		if(flag) {
-			out.print("\n");
-			flag = false;
-		}
-		for (String scopeName : keyList) {
-			SymbolTableEntryClassName s = tempHashMap.get(scopeName);
-			if(<<check if s is a Var here>>) {
-				if(!flag) {
-					out.print("Vars in current scope:");
-					flag = true;
-				}
-				out.print(" "+<<VAR NAME>>+":"+<<VAR TYPE>>);
-			}
-		}
-		if(flag) {
-			out.print("\n");
-			flag = false;
-		}
-		for (String scopeName : keyList) {
-			SymbolTableEntryClassName s = tempHashMap.get(scopeName);
-			if(<<check if s is a Method here>>) {
-				if(!flag) {
-					out.print("Methods in current scope:");
-					flag = true;
-				}
-				out.print(" "+<<METHOD NAME>>);
-			}
-		}
-		if(flag) {
-			out.print("\n");
-		}
-    	for (String scopeName : keyList) {
-			SymbolTableEntryClassName s = tempHashMap.get(scopeName);
-    		if(<check if s is a class here>) {
-    			out.println("\nIn class "+<<CLASS NAME>>+" scope");
-    			this.printSymTable(<<CLASS SCOPE>>);
-    		} else if(<<check if s is a method here>>) {
-    			out.println("In method "+<<METHOD NAME>>+" scope");
-    			//print method signature here 
-				  String formals; //add logic to populate formals
-    			String retType; //add logic to populate return type
-    			out.println("Method Signature: ("+formals+") returns "+retType);
-    			this.printSymTable(<<METHOD SCOPE>>);
-    		}
-    	}
-    }
+
+
+For convenience, you can run `sh test.sh` under `PA3/PA3Start` directory. It would automatically run makefile and test case.
+
+This compiler can create symbol table for all test cases under `PA3/PA3Start/TestPA3/WorkingTest` and do the type checking under `PA3/PA3Start/TestPA3/ErrorTest`. The structure of test files are as follows:
+
+```
+├── ErrorTest/
+│   ├── PA4doubleDef.java
+│   ├── PA4noDef.java
+│   ├── PA5dupParam.java
+│   └── PA5dupnameserror.java
+|   |__ PA3tooManyParams.java
+|   |__ PA3varNoDef.java
+└── WorkingTest/
+    ├── PA4MazeSolver.java
+    ├── PA4bluedot.java
+    ├── PA4raindrop.java
+    ├── PA5RunningExample.java
+    ├── PA5movedot.java
+    ├── PA5obj.java
+    └── expectOutput/
+
+3 directories, 12 files
+```
+
+
+
+It can do type checking including:
+
+* Number of parameters:
+
+test file PA3tooManyParams.java
+
+.....
+
+[19,14] Method [func1(BYTE,INT,INT,INT,INT,INT,INT,INT,INT,INT,INT,INT,INT,INT)] under scope func1 has too many parameters (at most 12)
+
+++++++++++++++++++++
+* Undefined variables:
+
+test file PA3varNoDef.java
+....
+[21,16] ID [haha] is not in scope setP
+
+++++++++++++++++++++
+* Double defined method
+
+test file PA4doubleDef.java
+.....
+[25,17] Method [setP] is already defined in scope C
+
+++++++++++++++++++++
+* Undefined method
+
+test file PA4noDef.java
+.....
+[14,2] Method [setPix] is not defined under scope C
+
+++++++++++++++++++++
+* Duplicate parameter in method
+
+test file PA5dupParam.java
+....
+[18,14] Formal [a] is already defined in scope myMethod
+
+++++++++++++++++++++
+* Duplicate name in method/var/class
+
+test file PA5dupnameserror.java
+....
+[23,16] Method [A] is already defined in scope A
+
