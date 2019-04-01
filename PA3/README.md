@@ -2,7 +2,7 @@
 
 Dear Prof. Soffa and TAs,
 
-
+My name is Qian Qu, computing ID is qq8jn.
 
 For convenience, you can run `sh test.sh` under `PA3/PA3Start` directory. It would automatically run makefile and test case.
 
