@@ -50,8 +50,8 @@ do
 
     java -jar ../../MJSIM.jar -b -f ${filename}.s >& ./${file}.out.txt
 
-    echo "diff ${filename} with expected file"
+    echo "diff ${file}.out.txt with expected file"
 	diff expectOutput/${file}.referout.txt ./${file}.out.txt
-    echo "if no other information, ${filename} OK"
+    echo "if no other information, ${file}.out.txt OK"
 #    java -jar ../../MJ.jar ${filename}
 done
