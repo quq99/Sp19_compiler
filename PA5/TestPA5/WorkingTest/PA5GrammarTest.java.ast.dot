@@ -1,0 +1,183 @@
+digraph ASTGraph {
+0 [ label="Program" ];
+1 [ label="MainClass" ];
+0 -> 1
+2 [ label="BlockStatement" ];
+1 -> 2
+3 [ label="CallStatement" ];
+2 -> 3
+4 [ label="NewExp" ];
+3 -> 4
+5 [ label="NewExp" ];
+3 -> 5
+6 [ label="TopClassDecl" ];
+0 -> 6
+7 [ label="VarDecl" ];
+6 -> 7
+8 [ label="IntType" ];
+7 -> 8
+9 [ label="TopClassDecl" ];
+0 -> 9
+10 [ label="VarDecl" ];
+9 -> 10
+11 [ label="IntType" ];
+10 -> 11
+12 [ label="VarDecl" ];
+9 -> 12
+13 [ label="ByteType" ];
+12 -> 13
+14 [ label="VarDecl" ];
+9 -> 14
+15 [ label="BoolType" ];
+14 -> 15
+16 [ label="VarDecl" ];
+9 -> 16
+17 [ label="ColorType" ];
+16 -> 17
+18 [ label="VarDecl" ];
+9 -> 18
+19 [ label="ButtonType" ];
+18 -> 19
+20 [ label="VarDecl" ];
+9 -> 20
+21 [ label="ToneType" ];
+20 -> 21
+22 [ label="VarDecl" ];
+9 -> 22
+23 [ label="ClassType" ];
+22 -> 23
+24 [ label="MethodDecl" ];
+9 -> 24
+25 [ label="IntType" ];
+24 -> 25
+26 [ label="Formal" ];
+24 -> 26
+27 [ label="ClassType" ];
+26 -> 27
+28 [ label="VarDecl" ];
+24 -> 28
+29 [ label="IntType" ];
+28 -> 29
+30 [ label="VarDecl" ];
+24 -> 30
+31 [ label="IntType" ];
+30 -> 31
+32 [ label="VarDecl" ];
+24 -> 32
+33 [ label="ByteType" ];
+32 -> 33
+34 [ label="VarDecl" ];
+24 -> 34
+35 [ label="ByteType" ];
+34 -> 35
+36 [ label="VarDecl" ];
+24 -> 36
+37 [ label="ByteType" ];
+36 -> 37
+38 [ label="VarDecl" ];
+24 -> 38
+39 [ label="BoolType" ];
+38 -> 39
+40 [ label="VarDecl" ];
+24 -> 40
+41 [ label="ColorType" ];
+40 -> 41
+42 [ label="VarDecl" ];
+24 -> 42
+43 [ label="ButtonType" ];
+42 -> 43
+44 [ label="VarDecl" ];
+24 -> 44
+45 [ label="ToneType" ];
+44 -> 45
+46 [ label="VarDecl" ];
+24 -> 46
+47 [ label="ClassType" ];
+46 -> 47
+48 [ label="AssignStatement" ];
+24 -> 48
+49 [ label="IntLiteral\n11" ];
+48 -> 49
+50 [ label="AssignStatement" ];
+24 -> 50
+51 [ label="ByteCast" ];
+50 -> 51
+52 [ label="IntLiteral\n1" ];
+51 -> 52
+53 [ label="AssignStatement" ];
+24 -> 53
+54 [ label="ByteCast" ];
+53 -> 54
+55 [ label="IntLiteral\n3" ];
+54 -> 55
+56 [ label="AssignStatement" ];
+24 -> 56
+57 [ label="ByteCast" ];
+56 -> 57
+58 [ label="IntLiteral\n4" ];
+57 -> 58
+59 [ label="AssignStatement" ];
+24 -> 59
+60 [ label="TrueLiteral\ntrue" ];
+59 -> 60
+61 [ label="AssignStatement" ];
+24 -> 61
+62 [ label="PlusExp" ];
+61 -> 62
+63 [ label="MinusExp" ];
+62 -> 63
+64 [ label="PlusExp" ];
+63 -> 64
+65 [ label="IdLiteral\nb" ];
+64 -> 65
+66 [ label="MulExp" ];
+64 -> 66
+67 [ label="IdLiteral\nc" ];
+66 -> 67
+68 [ label="IdLiteral\nd" ];
+66 -> 68
+69 [ label="IntLiteral\n5" ];
+63 -> 69
+70 [ label="MulExp" ];
+62 -> 70
+71 [ label="IdLiteral\nc" ];
+70 -> 71
+72 [ label="IdLiteral\nd" ];
+70 -> 72
+73 [ label="AssignStatement" ];
+24 -> 73
+74 [ label="ColorLiteral\nMeggy.Color.GREEN" ];
+73 -> 74
+75 [ label="MeggySetPixel" ];
+24 -> 75
+76 [ label="IdLiteral\nbb" ];
+75 -> 76
+77 [ label="IdLiteral\nbb" ];
+75 -> 77
+78 [ label="IdLiteral\nccolor" ];
+75 -> 78
+79 [ label="IfStatement" ];
+24 -> 79
+80 [ label="EqualExp" ];
+79 -> 80
+81 [ label="MeggyCheckButton" ];
+80 -> 81
+82 [ label="ButtonLiteral\nMeggy.Button.Up" ];
+81 -> 82
+83 [ label="FalseLiteral\nfalse" ];
+80 -> 83
+84 [ label="BlockStatement" ];
+79 -> 84
+85 [ label="AssignStatement" ];
+84 -> 85
+86 [ label="ToneLiteral\nMeggy.Tone.Cs3" ];
+85 -> 86
+87 [ label="MeggyToneStart" ];
+84 -> 87
+88 [ label="IdLiteral\nttone" ];
+87 -> 88
+89 [ label="IdLiteral\naa" ];
+87 -> 89
+90 [ label="IdLiteral\naa" ];
+24 -> 90
+}

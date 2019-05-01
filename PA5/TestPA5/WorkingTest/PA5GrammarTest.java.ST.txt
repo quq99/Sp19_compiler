@@ -1,0 +1,11 @@
+Classes in global scope: CustomType TestVarDecl
+
+In class CustomType scope
+Vars in current scope: a:INT
+
+In class TestVarDecl scope
+Vars in current scope: a:INT b:BYTE bt:BUTTON c:BOOL color:COLOR t:class_TestVarDecl tone:TONE
+Methods in current scope: func
+In method func scope
+Method Signature: (class_CustomType) returns INT
+Vars in current scope: THIS:class_TestVarDecl a:INT aa:INT bb:BYTE bbtt:BUTTON c:BYTE cc:BOOL ccolor:COLOR d:BYTE tt:class_TestVarDecl ttone:TONE yo:class_CustomType

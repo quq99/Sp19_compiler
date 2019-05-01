@@ -1,0 +1,26 @@
+Classes in global scope: CustomType TestClassCompare TestThis
+
+In class CustomType scope
+Vars in current scope: a:INT
+
+In class TestClassCompare scope
+Methods in current scope: compare
+In method compare scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestClassCompare a:class_CustomType b:class_CustomType
+
+In class TestThis scope
+Vars in current scope: a:INT b:INT
+Methods in current scope: func getA getB test
+In method func scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestThis
+In method getA scope
+Method Signature: () returns INT
+Vars in current scope: THIS:class_TestThis
+In method getB scope
+Method Signature: () returns INT
+Vars in current scope: THIS:class_TestThis
+In method test scope
+Method Signature: (class_TestThis) returns class_null
+Vars in current scope: THIS:class_TestThis t:class_TestThis

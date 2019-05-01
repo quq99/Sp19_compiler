@@ -1,0 +1,197 @@
+digraph ASTGraph {
+0 [ label="Program" ];
+1 [ label="MainClass" ];
+0 -> 1
+2 [ label="BlockStatement" ];
+1 -> 2
+3 [ label="CallStatement" ];
+2 -> 3
+4 [ label="NewExp" ];
+3 -> 4
+5 [ label="CallStatement" ];
+2 -> 5
+6 [ label="NewExp" ];
+5 -> 6
+7 [ label="ByteCast" ];
+5 -> 7
+8 [ label="IntLiteral\n1" ];
+7 -> 8
+9 [ label="ByteCast" ];
+5 -> 9
+10 [ label="IntLiteral\n2" ];
+9 -> 10
+11 [ label="ByteCast" ];
+5 -> 11
+12 [ label="IntLiteral\n3" ];
+11 -> 12
+13 [ label="ByteCast" ];
+5 -> 13
+14 [ label="IntLiteral\n4" ];
+13 -> 14
+15 [ label="TopClassDecl" ];
+0 -> 15
+16 [ label="TopClassDecl" ];
+0 -> 16
+17 [ label="MethodDecl" ];
+16 -> 17
+18 [ label="VoidType" ];
+17 -> 18
+19 [ label="VarDecl" ];
+17 -> 19
+20 [ label="BoolType" ];
+19 -> 20
+21 [ label="VarDecl" ];
+17 -> 21
+22 [ label="ByteType" ];
+21 -> 22
+23 [ label="VarDecl" ];
+17 -> 23
+24 [ label="IntType" ];
+23 -> 24
+25 [ label="VarDecl" ];
+17 -> 25
+26 [ label="ColorType" ];
+25 -> 26
+27 [ label="VarDecl" ];
+17 -> 27
+28 [ label="ButtonType" ];
+27 -> 28
+29 [ label="VarDecl" ];
+17 -> 29
+30 [ label="ToneType" ];
+29 -> 30
+31 [ label="VarDecl" ];
+17 -> 31
+32 [ label="ClassType" ];
+31 -> 32
+33 [ label="TopClassDecl" ];
+0 -> 33
+34 [ label="MethodDecl" ];
+33 -> 34
+35 [ label="VoidType" ];
+34 -> 35
+36 [ label="VarDecl" ];
+34 -> 36
+37 [ label="IntType" ];
+36 -> 37
+38 [ label="VarDecl" ];
+34 -> 38
+39 [ label="IntType" ];
+38 -> 39
+40 [ label="AssignStatement" ];
+34 -> 40
+41 [ label="IntLiteral\n0" ];
+40 -> 41
+42 [ label="AssignStatement" ];
+34 -> 42
+43 [ label="IdLiteral\na" ];
+42 -> 43
+44 [ label="AssignStatement" ];
+34 -> 44
+45 [ label="NegExp" ];
+44 -> 45
+46 [ label="IdLiteral\nb" ];
+45 -> 46
+47 [ label="AssignStatement" ];
+34 -> 47
+48 [ label="PlusExp" ];
+47 -> 48
+49 [ label="MinusExp" ];
+48 -> 49
+50 [ label="PlusExp" ];
+49 -> 50
+51 [ label="IdLiteral\na" ];
+50 -> 51
+52 [ label="IdLiteral\nb" ];
+50 -> 52
+53 [ label="IdLiteral\na" ];
+49 -> 53
+54 [ label="NegExp" ];
+48 -> 54
+55 [ label="IdLiteral\nb" ];
+54 -> 55
+56 [ label="TopClassDecl" ];
+0 -> 56
+57 [ label="MethodDecl" ];
+56 -> 57
+58 [ label="VoidType" ];
+57 -> 58
+59 [ label="VarDecl" ];
+57 -> 59
+60 [ label="ClassType" ];
+59 -> 60
+61 [ label="VarDecl" ];
+57 -> 61
+62 [ label="ClassType" ];
+61 -> 62
+63 [ label="AssignStatement" ];
+57 -> 63
+64 [ label="NewExp" ];
+63 -> 64
+65 [ label="CallStatement" ];
+57 -> 65
+66 [ label="IdLiteral\nt" ];
+65 -> 66
+67 [ label="AssignStatement" ];
+57 -> 67
+68 [ label="NewExp" ];
+67 -> 68
+69 [ label="CallStatement" ];
+57 -> 69
+70 [ label="IdLiteral\nv" ];
+69 -> 70
+71 [ label="TopClassDecl" ];
+0 -> 71
+72 [ label="MethodDecl" ];
+71 -> 72
+73 [ label="VoidType" ];
+72 -> 73
+74 [ label="Formal" ];
+72 -> 74
+75 [ label="ByteType" ];
+74 -> 75
+76 [ label="Formal" ];
+72 -> 76
+77 [ label="ByteType" ];
+76 -> 77
+78 [ label="Formal" ];
+72 -> 78
+79 [ label="ByteType" ];
+78 -> 79
+80 [ label="Formal" ];
+72 -> 80
+81 [ label="ByteType" ];
+80 -> 81
+82 [ label="VarDecl" ];
+72 -> 82
+83 [ label="ColorType" ];
+82 -> 83
+84 [ label="AssignStatement" ];
+72 -> 84
+85 [ label="MeggyGetPixel" ];
+84 -> 85
+86 [ label="IdLiteral\nx0" ];
+85 -> 86
+87 [ label="IdLiteral\ny0" ];
+85 -> 87
+88 [ label="MeggySetPixel" ];
+72 -> 88
+89 [ label="IdLiteral\nx0" ];
+88 -> 89
+90 [ label="IdLiteral\ny0" ];
+88 -> 90
+91 [ label="MeggyGetPixel" ];
+88 -> 91
+92 [ label="IdLiteral\nx1" ];
+91 -> 92
+93 [ label="IdLiteral\nx1" ];
+91 -> 93
+94 [ label="MeggySetPixel" ];
+72 -> 94
+95 [ label="IdLiteral\nx1" ];
+94 -> 95
+96 [ label="IdLiteral\ny1" ];
+94 -> 96
+97 [ label="IdLiteral\nc" ];
+94 -> 97
+}

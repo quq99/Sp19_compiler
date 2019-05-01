@@ -1,0 +1,25 @@
+Setting pixel (0,2) to YELLOW
+Setting pixel (1,2) to YELLOW
+Setting pixel (2,2) to YELLOW
+Setting pixel (3,2) to YELLOW
+Setting pixel (4,2) to YELLOW
+Setting pixel (5,2) to YELLOW
+Setting pixel (6,2) to YELLOW
+Setting pixel (7,2) to YELLOW
+Delaying for 80 milliseconds
+Setting pixel (0,2) to RED
+Setting pixel (1,2) to RED
+Setting pixel (2,2) to RED
+Setting pixel (3,2) to RED
+Setting pixel (4,2) to RED
+Setting pixel (5,2) to RED
+Setting pixel (6,2) to RED
+Setting pixel (7,2) to RED
+Delaying for 80 milliseconds
+Setting pixel (0,2) to VIOLET
+Setting pixel (1,2) to VIOLET
+Setting pixel (2,2) to VIOLET
+Setting pixel (3,2) to VIOLET
+Setting pixel (4,2) to VIOLET
+Setting pixel (5,2) to VIOLET
+Setting pixel (6,2) to VIOLET

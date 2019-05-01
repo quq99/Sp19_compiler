@@ -1,0 +1,25 @@
+Checking button Up and returning false
+Checking button Down and returning false
+Checking button Left and returning false
+Checking button Right and returning false
+Delaying for 100 milliseconds
+Checking button Up and returning false
+Checking button Down and returning false
+Checking button Left and returning false
+Checking button Right and returning false
+Delaying for 100 milliseconds
+Checking button Up and returning false
+Checking button Down and returning false
+Checking button Left and returning false
+Checking button Right and returning false
+Delaying for 100 milliseconds
+Checking button Up and returning false
+Checking button Down and returning false
+Checking button Left and returning false
+Checking button Right and returning false
+Delaying for 100 milliseconds
+Checking button Up and returning false
+Checking button Down and returning false
+Checking button Left and returning false
+Checking button Right and returning false
+Delaying for 100 milliseconds

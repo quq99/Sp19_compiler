@@ -1,0 +1,9 @@
+digraph ASTGraph {
+graph [rankdir="LR"];
+node [shape=record];
+0 [ label=" <f0> Scope | <f1> mDict\[PA3ifdots\] "];
+1[ label="  <f0> ClassSTE| <f1> mName = PA3ifdots| <f2> mMain = true| <f3> mSuperClass = null| <f4> mScope "];
+0:<f1> -> 1:<f0>
+2 [ label=" <f0> Scope "];
+1:<f4> -> 2:<f0>
+}

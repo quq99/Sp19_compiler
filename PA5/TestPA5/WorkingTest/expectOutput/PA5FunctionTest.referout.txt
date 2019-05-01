@@ -1,0 +1,3 @@
+Setting pixel (1,2) to GREEN
+Setting pixel (1,2) to GREEN
+Setting pixel (1,2) to GREEN

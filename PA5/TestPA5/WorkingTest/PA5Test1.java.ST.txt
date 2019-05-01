@@ -1,0 +1,27 @@
+Classes in global scope: SwitchPixel TestAssign TestObjectCreation TestVarDeclare ThisIsAType
+
+In class SwitchPixel scope
+Methods in current scope: switchPixel
+In method switchPixel scope
+Method Signature: (BYTE,BYTE,BYTE,BYTE) returns class_null
+Vars in current scope: THIS:class_SwitchPixel c:COLOR x0:BYTE x1:BYTE y0:BYTE y1:BYTE
+
+In class TestAssign scope
+Methods in current scope: testAssign
+In method testAssign scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestAssign a:INT b:INT
+
+In class TestObjectCreation scope
+Methods in current scope: testObjectCreation
+In method testObjectCreation scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestObjectCreation t:class_TestAssign v:class_TestVarDeclare
+
+In class TestVarDeclare scope
+Methods in current scope: testVar
+In method testVar scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestVarDeclare b:BOOL bt:BYTE btn:BUTTON c:COLOR customType:class_ThisIsAType i:INT t:TONE
+
+In class ThisIsAType scope

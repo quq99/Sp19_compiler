@@ -1,0 +1,26 @@
+Classes in global scope: MeggyHelper MixedTest TestTimes
+
+In class MeggyHelper scope
+Methods in current scope: comparePixel setColorByLine sing
+In method comparePixel scope
+Method Signature: (BYTE,BYTE,BYTE,BYTE) returns BOOL
+Vars in current scope: THIS:class_MeggyHelper res:BOOL x0:BYTE x1:BYTE y0:BYTE y1:BYTE
+In method setColorByLine scope
+Method Signature: (INT,COLOR) returns class_null
+Vars in current scope: THIS:class_MeggyHelper c:COLOR i:INT l:INT
+In method sing scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_MeggyHelper duration:INT i:INT
+
+In class MixedTest scope
+Methods in current scope: mixedTestOne
+In method mixedTestOne scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_MixedTest _This_1s_a_1dentifi3r:class_MeggyHelper a:INT
+
+In class TestTimes scope
+Vars in current scope: a:INT
+Methods in current scope: test
+In method test scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestTimes

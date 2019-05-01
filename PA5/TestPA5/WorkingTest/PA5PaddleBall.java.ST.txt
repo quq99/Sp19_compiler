@@ -1,0 +1,42 @@
+Classes in global scope: Ball Paddle PaddleBallBoard
+
+In class Ball scope
+Vars in current scope: ballColor:COLOR currentX:BYTE currentY:BYTE prevX:BYTE prevY:BYTE
+Methods in current scope: collision inBounds init move
+In method collision scope
+Method Signature: (BYTE,BYTE) returns BOOL
+Vars in current scope: THIS:class_Ball x:BYTE y:BYTE
+In method inBounds scope
+Method Signature: (BYTE,BYTE) returns BOOL
+Vars in current scope: THIS:class_Ball x:BYTE y:BYTE
+In method init scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_Ball
+In method move scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_Ball deltaX:BYTE deltaY:BYTE nextX:BYTE nextY:BYTE
+
+In class Paddle scope
+Vars in current scope: centerX:BYTE color:COLOR
+Methods in current scope: drawPaddle inBounds init moveLeft moveRight
+In method drawPaddle scope
+Method Signature: (BYTE) returns class_null
+Vars in current scope: THIS:class_Paddle x:BYTE
+In method inBounds scope
+Method Signature: (BYTE,BYTE) returns BOOL
+Vars in current scope: THIS:class_Paddle x:BYTE y:BYTE
+In method init scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_Paddle
+In method moveLeft scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_Paddle
+In method moveRight scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_Paddle
+
+In class PaddleBallBoard scope
+Methods in current scope: run
+In method run scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_PaddleBallBoard b:class_Ball p:class_Paddle

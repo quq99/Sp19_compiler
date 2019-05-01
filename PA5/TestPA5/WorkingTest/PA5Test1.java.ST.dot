@@ -1,0 +1,85 @@
+digraph ASTGraph {
+graph [rankdir="LR"];
+node [shape=record];
+0 [ label=" <f0> Scope | <f1> mDict\[PA5Test1\] | <f2> mDict\[TestVarDeclare\] | <f3> mDict\[TestAssign\] | <f4> mDict\[ThisIsAType\] | <f5> mDict\[TestObjectCreation\] | <f6> mDict\[SwitchPixel\] "];
+1[ label="  <f0> ClassSTE| <f1> mName = PA5Test1| <f2> mMain = true| <f3> mSuperClass = null| <f4> mScope "];
+0:<f1> -> 1:<f0>
+7 [ label=" <f0> Scope "];
+1:<f4> -> 7:<f0>
+2[ label="  <f0> ClassSTE| <f1> mName = TestVarDeclare| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f2> -> 2:<f0>
+8 [ label=" <f0> Scope | <f1> mDict\[testVar\] "];
+2:<f4> -> 8:<f0>
+9 [ label="  <f0> MethodSTE | <f1> mName = testVar| <f2> mSignatrue = () returns VOID| <f3> mScope"];
+8:<f1> -> 9:<f0>
+10 [ label=" <f0> Scope | <f1> mDict\[b\] | <f2> mDict\[bt\] | <f3> mDict\[customType\] | <f4> mDict\[c\] | <f5> mDict\[t\] | <f6> mDict\[this\] | <f7> mDict\[i\] | <f8> mDict\[btn\] "];
+9:<f3> -> 10:<f0>
+11 [ label="  <f0> VarSTE | <f1> mName = b| <f2> mType = BOOL| <f3> mBase = Y| <f4> mOffset = 3"];
+10:<f1> -> 11:<f0>
+12 [ label="  <f0> VarSTE | <f1> mName = bt| <f2> mType = BYTE| <f3> mBase = Y| <f4> mOffset = 4"];
+10:<f2> -> 12:<f0>
+13 [ label="  <f0> VarSTE | <f1> mName = customType| <f2> mType = ThisIsAType| <f3> mBase = Y| <f4> mOffset = 11"];
+10:<f3> -> 13:<f0>
+14 [ label="  <f0> VarSTE | <f1> mName = c| <f2> mType = COLOR| <f3> mBase = Y| <f4> mOffset = 7"];
+10:<f4> -> 14:<f0>
+15 [ label="  <f0> VarSTE | <f1> mName = t| <f2> mType = TONE| <f3> mBase = Y| <f4> mOffset = 9"];
+10:<f5> -> 15:<f0>
+16 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestVarDeclare| <f3> mBase = Y| <f4> mOffset = 1"];
+10:<f6> -> 16:<f0>
+17 [ label="  <f0> VarSTE | <f1> mName = i| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 5"];
+10:<f7> -> 17:<f0>
+18 [ label="  <f0> VarSTE | <f1> mName = btn| <f2> mType = BUTTON| <f3> mBase = Y| <f4> mOffset = 8"];
+10:<f8> -> 18:<f0>
+3[ label="  <f0> ClassSTE| <f1> mName = TestAssign| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f3> -> 3:<f0>
+19 [ label=" <f0> Scope | <f1> mDict\[testAssign\] "];
+3:<f4> -> 19:<f0>
+20 [ label="  <f0> MethodSTE | <f1> mName = testAssign| <f2> mSignatrue = () returns VOID| <f3> mScope"];
+19:<f1> -> 20:<f0>
+21 [ label=" <f0> Scope | <f1> mDict\[a\] | <f2> mDict\[b\] | <f3> mDict\[this\] "];
+20:<f3> -> 21:<f0>
+22 [ label="  <f0> VarSTE | <f1> mName = a| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 3"];
+21:<f1> -> 22:<f0>
+23 [ label="  <f0> VarSTE | <f1> mName = b| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 5"];
+21:<f2> -> 23:<f0>
+24 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestAssign| <f3> mBase = Y| <f4> mOffset = 1"];
+21:<f3> -> 24:<f0>
+4[ label="  <f0> ClassSTE| <f1> mName = ThisIsAType| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f4> -> 4:<f0>
+25 [ label=" <f0> Scope "];
+4:<f4> -> 25:<f0>
+5[ label="  <f0> ClassSTE| <f1> mName = TestObjectCreation| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f5> -> 5:<f0>
+26 [ label=" <f0> Scope | <f1> mDict\[testObjectCreation\] "];
+5:<f4> -> 26:<f0>
+27 [ label="  <f0> MethodSTE | <f1> mName = testObjectCreation| <f2> mSignatrue = () returns VOID| <f3> mScope"];
+26:<f1> -> 27:<f0>
+28 [ label=" <f0> Scope | <f1> mDict\[t\] | <f2> mDict\[v\] | <f3> mDict\[this\] "];
+27:<f3> -> 28:<f0>
+29 [ label="  <f0> VarSTE | <f1> mName = t| <f2> mType = TestAssign| <f3> mBase = Y| <f4> mOffset = 3"];
+28:<f1> -> 29:<f0>
+30 [ label="  <f0> VarSTE | <f1> mName = v| <f2> mType = TestVarDeclare| <f3> mBase = Y| <f4> mOffset = 5"];
+28:<f2> -> 30:<f0>
+31 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestObjectCreation| <f3> mBase = Y| <f4> mOffset = 1"];
+28:<f3> -> 31:<f0>
+6[ label="  <f0> ClassSTE| <f1> mName = SwitchPixel| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f6> -> 6:<f0>
+32 [ label=" <f0> Scope | <f1> mDict\[switchPixel\] "];
+6:<f4> -> 32:<f0>
+33 [ label="  <f0> MethodSTE | <f1> mName = switchPixel| <f2> mSignatrue = (BYTE,BYTE,BYTE,BYTE) returns VOID| <f3> mScope"];
+32:<f1> -> 33:<f0>
+34 [ label=" <f0> Scope | <f1> mDict\[c\] | <f2> mDict\[y0\] | <f3> mDict\[this\] | <f4> mDict\[x0\] | <f5> mDict\[y1\] | <f6> mDict\[x1\] "];
+33:<f3> -> 34:<f0>
+35 [ label="  <f0> VarSTE | <f1> mName = c| <f2> mType = COLOR| <f3> mBase = Y| <f4> mOffset = 7"];
+34:<f1> -> 35:<f0>
+36 [ label="  <f0> VarSTE | <f1> mName = y0| <f2> mType = BYTE| <f3> mBase = Y| <f4> mOffset = 4"];
+34:<f2> -> 36:<f0>
+37 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = SwitchPixel| <f3> mBase = Y| <f4> mOffset = 1"];
+34:<f3> -> 37:<f0>
+38 [ label="  <f0> VarSTE | <f1> mName = x0| <f2> mType = BYTE| <f3> mBase = Y| <f4> mOffset = 3"];
+34:<f4> -> 38:<f0>
+39 [ label="  <f0> VarSTE | <f1> mName = y1| <f2> mType = BYTE| <f3> mBase = Y| <f4> mOffset = 6"];
+34:<f5> -> 39:<f0>
+40 [ label="  <f0> VarSTE | <f1> mName = x1| <f2> mType = BYTE| <f3> mBase = Y| <f4> mOffset = 5"];
+34:<f6> -> 40:<f0>
+}

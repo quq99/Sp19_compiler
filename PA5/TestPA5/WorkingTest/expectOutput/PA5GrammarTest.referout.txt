@@ -1,0 +1,3 @@
+Setting pixel (1,1) to GREEN
+Checking button Up and returning false
+Playing tone Cs3 for 11 milliseconds

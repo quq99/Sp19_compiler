@@ -1,0 +1,25 @@
+Setting pixel (4,6) to ORANGE
+Setting pixel (3,0) to BLUE
+Setting pixel (4,0) to BLUE
+Setting pixel (5,0) to BLUE
+Checking button Left and returning false
+Checking button Right and returning false
+Getting pixel (5,5) ==>DARK
+Setting pixel (4,6) to DARK
+Setting pixel (5,5) to ORANGE
+Delaying for 256 milliseconds
+Checking button Left and returning false
+Checking button Right and returning false
+Getting pixel (6,4) ==>DARK
+Setting pixel (5,5) to DARK
+Setting pixel (6,4) to ORANGE
+Delaying for 256 milliseconds
+Checking button Left and returning false
+Checking button Right and returning false
+Getting pixel (7,3) ==>DARK
+Setting pixel (6,4) to DARK
+Setting pixel (7,3) to ORANGE
+Delaying for 256 milliseconds
+Checking button Left and returning false
+Checking button Right and returning false
+Getting pixel (6,2) ==>DARK

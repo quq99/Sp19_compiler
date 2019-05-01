@@ -1,0 +1,16 @@
+Classes in global scope: Dummy TestThis
+
+In class Dummy scope
+
+In class TestThis scope
+Vars in current scope: a:INT b:INT
+Methods in current scope: getVar testClassComparison testThis
+In method getVar scope
+Method Signature: (INT,INT) returns INT
+Vars in current scope: THIS:class_TestThis a:INT b:INT
+In method testClassComparison scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestThis d1:class_Dummy d2:class_Dummy
+In method testThis scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestThis local:INT

@@ -1,0 +1,49 @@
+digraph ASTGraph {
+graph [rankdir="LR"];
+node [shape=record];
+0 [ label=" <f0> Scope | <f1> mDict\[PA5RubricTest\] | <f2> mDict\[Dummy\] | <f3> mDict\[TestThis\] "];
+1[ label="  <f0> ClassSTE| <f1> mName = PA5RubricTest| <f2> mMain = true| <f3> mSuperClass = null| <f4> mScope "];
+0:<f1> -> 1:<f0>
+4 [ label=" <f0> Scope "];
+1:<f4> -> 4:<f0>
+2[ label="  <f0> ClassSTE| <f1> mName = Dummy| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f2> -> 2:<f0>
+5 [ label=" <f0> Scope "];
+2:<f4> -> 5:<f0>
+3[ label="  <f0> ClassSTE| <f1> mName = TestThis| <f2> mMain = false| <f3> mSuperClass = null| <f4> mScope "];
+0:<f3> -> 3:<f0>
+6 [ label=" <f0> Scope | <f1> mDict\[a\] | <f2> mDict\[b\] | <f3> mDict\[testThis\] | <f4> mDict\[getVar\] | <f5> mDict\[testClassComparison\] "];
+3:<f4> -> 6:<f0>
+7 [ label="  <f0> VarSTE | <f1> mName = a| <f2> mType = INT| <f3> mBase = Z| <f4> mOffset = 0"];
+6:<f1> -> 7:<f0>
+8 [ label="  <f0> VarSTE | <f1> mName = b| <f2> mType = INT| <f3> mBase = Z| <f4> mOffset = 2"];
+6:<f2> -> 8:<f0>
+9 [ label="  <f0> MethodSTE | <f1> mName = testThis| <f2> mSignatrue = () returns VOID| <f3> mScope"];
+6:<f3> -> 9:<f0>
+12 [ label=" <f0> Scope | <f1> mDict\[this\] | <f2> mDict\[local\] "];
+9:<f3> -> 12:<f0>
+13 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestThis| <f3> mBase = Y| <f4> mOffset = 1"];
+12:<f1> -> 13:<f0>
+14 [ label="  <f0> VarSTE | <f1> mName = local| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 3"];
+12:<f2> -> 14:<f0>
+10 [ label="  <f0> MethodSTE | <f1> mName = getVar| <f2> mSignatrue = (INT,INT) returns INT| <f3> mScope"];
+6:<f4> -> 10:<f0>
+15 [ label=" <f0> Scope | <f1> mDict\[a\] | <f2> mDict\[b\] | <f3> mDict\[this\] "];
+10:<f3> -> 15:<f0>
+16 [ label="  <f0> VarSTE | <f1> mName = a| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 3"];
+15:<f1> -> 16:<f0>
+17 [ label="  <f0> VarSTE | <f1> mName = b| <f2> mType = INT| <f3> mBase = Y| <f4> mOffset = 5"];
+15:<f2> -> 17:<f0>
+18 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestThis| <f3> mBase = Y| <f4> mOffset = 1"];
+15:<f3> -> 18:<f0>
+11 [ label="  <f0> MethodSTE | <f1> mName = testClassComparison| <f2> mSignatrue = () returns VOID| <f3> mScope"];
+6:<f5> -> 11:<f0>
+19 [ label=" <f0> Scope | <f1> mDict\[this\] | <f2> mDict\[d1\] | <f3> mDict\[d2\] "];
+11:<f3> -> 19:<f0>
+20 [ label="  <f0> VarSTE | <f1> mName = this| <f2> mType = TestThis| <f3> mBase = Y| <f4> mOffset = 1"];
+19:<f1> -> 20:<f0>
+21 [ label="  <f0> VarSTE | <f1> mName = d1| <f2> mType = Dummy| <f3> mBase = Y| <f4> mOffset = 3"];
+19:<f2> -> 21:<f0>
+22 [ label="  <f0> VarSTE | <f1> mName = d2| <f2> mType = Dummy| <f3> mBase = Y| <f4> mOffset = 5"];
+19:<f3> -> 22:<f0>
+}

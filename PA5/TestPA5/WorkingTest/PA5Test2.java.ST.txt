@@ -1,0 +1,22 @@
+Classes in global scope: CustomType TestLongVarDeclareList TestNestedWhileLoop TestVarDeclareInClass
+
+In class CustomType scope
+
+In class TestLongVarDeclareList scope
+Methods in current scope: testLongVarDeclareList
+In method testLongVarDeclareList scope
+Method Signature: (BYTE,BOOL,COLOR,BUTTON,TONE,class_CustomType,INT,INT,INT,INT,INT,INT) returns INT
+Vars in current scope: THIS:class_TestLongVarDeclareList b:BYTE bl:BOOL btn:BUTTON c:COLOR i:INT ii:INT iii:INT iiii:INT iiiii:INT iiiiii:INT myType:class_CustomType t:TONE
+
+In class TestNestedWhileLoop scope
+Methods in current scope: testNestedWhileLoop
+In method testNestedWhileLoop scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestNestedWhileLoop
+
+In class TestVarDeclareInClass scope
+Vars in current scope: a:INT b:INT
+Methods in current scope: testVarDeclareInClass
+In method testVarDeclareInClass scope
+Method Signature: () returns class_null
+Vars in current scope: THIS:class_TestVarDeclareInClass

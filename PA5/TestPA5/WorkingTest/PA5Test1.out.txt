@@ -1,0 +1,4 @@
+Getting pixel (1,2) ==>DARK
+Getting pixel (3,3) ==>DARK
+Setting pixel (1,2) to DARK
+Setting pixel (3,4) to DARK

@@ -1,0 +1,8 @@
+Setting pixel (6,3) to VIOLET
+Setting pixel (0,4) to BLUE
+Setting pixel (6,7) to RED
+Setting pixel (0,0) to YELLOW
+Setting pixel (5,5) to DARK
+Setting pixel (6,5) to ORANGE
+Setting pixel (2,7) to GREEN
+Setting pixel (6,5) to WHITE
