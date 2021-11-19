@@ -1176,3 +1176,5 @@ instructions.RuntimeError: Could not find function call class_MixedTest_mixedTes
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at com.simontuffs.onejar.Boot.run(Boot.java:340)
 	at com.simontuffs.onejar.Boot.main(Boot.java:166)
+2019-05-06 16:16:21,754 [main] FATAL ui.Main - Assembly File passed in does not exist.
+2019-05-06 16:18:32,185 [main] FATAL ui.Main - Assembly File passed in does not exist.
